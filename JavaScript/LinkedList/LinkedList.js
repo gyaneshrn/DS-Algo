@@ -1,7 +1,8 @@
 const Node = require("./Node");
 
 console.log(new Node());
-class LinkedList {
+
+export class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -52,18 +53,18 @@ class LinkedList {
   }
 
   rotate(n) {
-    let curr =  this.head;
+    let curr = this.head;
     let count = 0;
-    while(count < n && curr !== null){
+    while (count < n && curr !== null) {
       curr = curr.next;
       count++;
     }
     let lastNode = curr;
 
-    while(curr.next !== null) {
+    while (curr.next !== null) {
       curr = curr.next;
 
-      this.head = lastNode
+      this.head = lastNode;
     }
   }
   addAtLast(val) {
@@ -120,7 +121,7 @@ class LinkedList {
       console.log(curr.node);
       curr = curr.next;
     }
-    console.log("Length of lisnked..list", this.length);
+    console.log("Length of linked..list", this.length);
   }
 }
 
